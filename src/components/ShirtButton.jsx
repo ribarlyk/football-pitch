@@ -1,11 +1,12 @@
 
-
-export default function ShirtButton({ position, jersey }) {
-
+export default function ShirtButton({ name, jersey, position }) {
     return (
         <button className="goalkeeer-card">
-          { jersey && <img width='100' height='100' src={jersey} alt="" />}
-            <div className="player-name-container">{position}</div>
+            {jersey && <img className ="card-jersey"width='100' height='100' src={jersey} alt="" />}
+            <div className="player-name-container">{name}</div>
+            <div className="player-position-container">{position}</div>
         </button>
     )
 }
+
+

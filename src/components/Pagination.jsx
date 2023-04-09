@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 
 export default function PaginationOutline({ setPage, page, setLoading, loading }) {
 
-    const onChangeHandle = (page) => {
+    const onChangeHandler = (page) => {
         if (page.textContent) {
             setPage(Number(page.textContent))
         } else if (page = '<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>') {
@@ -18,7 +18,7 @@ export default function PaginationOutline({ setPage, page, setLoading, loading }
 
     return (
         <Stack spacing={2}>
-            <Pagination onClick={(e) => onChangeHandle((e.target))} count={44} variant="outlined" color="primary" />
+            <Pagination onClick={(e) => onChangeHandler((e.target))} count={45} variant="outlined" color="primary" />
         </Stack>
     );
 }
