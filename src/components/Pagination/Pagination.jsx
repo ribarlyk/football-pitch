@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-
+import "./Pagination.scss"
 
 export default function PaginationOutline({ setPage, page, setLoading, loading }) {
 
@@ -18,7 +18,7 @@ export default function PaginationOutline({ setPage, page, setLoading, loading }
 
     return (
         <Stack spacing={2}>
-            <Pagination onClick={(e) => onChangeHandler((e.target))} count={45} variant="outlined" color="primary" />
+            <Pagination onClick={(e) => onChangeHandler((e.target))} className='pagination-container' count={45} variant="outlined" color="primary" />
         </Stack>
     );
 }

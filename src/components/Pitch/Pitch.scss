@@ -1,4 +1,5 @@
 @import "./mixins";
+@import "./variables";
 
 .pitch-background {
     background: url("https://fantasy.premierleague.com/static/media/pitch-default.dab51b01.svg")
@@ -8,7 +9,7 @@
     height: 880px;
     position: relative;
     border: 1px solid gray;
-    background-color: #00ae55
+    background-color: #00ae55;
 }
 
 .free-space {
@@ -35,15 +36,19 @@
     color: #37003c;
     font-weight: 600;
 }
+.goalkeeer-card:hover {
+    cursor: pointer;
+}
 
 .substitute-five,
 .substitute-one,
 .substitute-two,
 .substitute-three,
 .substitute-four {
-    background-color: #904496;
-    border-radius: 20px;
+    background-color: $changeHighlight;
+    border-radius: $borderRadius;
 }
+
 .change-icon {
     position: absolute;
 }
@@ -63,24 +68,36 @@
     @include row(
         $width: 500px,
         $height: 100px,
-        $left: 55px,
+        $left: 160px,
         $top: 20px,
         $gap: 0
     );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button:hover {
+        cursor: pointer;
+    }
 }
 
 .row-one-change {
     .card-jersey {
-        background-color: #904496;
-        border-radius: 20px;
+        background-color: $changeHighlight;
+        border-radius: $borderRadius;
     }
     @include row(
         $width: 500px,
         $height: 100px,
-        $left: 55px,
+        $left: 157px,
         $top: 20px,
         $gap: 0
     );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .row-two {
@@ -96,8 +113,8 @@
     // opacity: 50%;
     // background-color: #37003c;
     .card-jersey {
-        background-color: #904496;
-        border-radius: 20px;
+        background-color: $changeHighlight;
+        border-radius: $borderRadius;
     }
     @include row(
         $width: 550px,
@@ -122,8 +139,8 @@
     // opacity: 50%;
     // background-color: #37003c;
     .card-jersey {
-        background-color: #904496;
-        border-radius: 20px;
+        background-color: $changeHighlight;
+        border-radius: $borderRadius;
     }
     @include row(
         $width: 550px,
@@ -147,8 +164,8 @@
     // opacity: 50%;
 
     .card-jersey {
-        background-color: #904496;
-        border-radius: 20px;
+        background-color: $changeHighlight;
+        border-radius: $borderRadius;
     }
     @include row(
         $width: 500px,
@@ -168,12 +185,10 @@
         $gap: 30
     );
     border-top: 2px solid #ffffff;
-    background-color: #9b0d44ee;
+    background-color: #5a9e90;
+    border-radius: 15px;
 }
 .row-five-change {
-    background-color: #904496;
-    border-radius: 20px;
-
     @include row(
         $width: 820px,
         $height: 100px,
@@ -185,18 +200,30 @@
 
 .container {
     display: flex;
+    justify-content: center;
 }
 
 .players-container {
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
+    margin-left: 15px;
 }
 
 .player-name-container {
     background-color: #37003c;
     color: #ffffff;
     width: 150px;
+}
+
+.pitch-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    border-radius: 20px;
+    .pitch-background {
+        border-radius: 15px;
+    }
 }
 
 .header-data {
@@ -210,42 +237,48 @@
     width: fit-content;
     padding: 3px 5px;
     font-weight: 700;
+    margin: 10px;
 }
 
 table {
+    border-collapse: collapse;
     td {
         font-weight: 600;
-        font-size: 18px;
+        font-size: 15px;
     }
 
-    table td:hover {
+    tr {
+        border-bottom: 1px solid rgb(220, 214, 214);
+    }
+
+    td:hover {
         cursor: pointer;
     }
 
-    tbody tr:hover {
+    tr:hover {
         background: rgb(238, 174, 202);
         background: radial-gradient(
             circle,
-            rgba(238, 174, 202, 1) 37%,
-            rgba(148, 187, 233, 1) 100%
+            rgba(238, 174, 202, 0.219) 37%,
+            rgba(148, 188, 233, 0.358) 100%
         );
     }
 }
 
-.modal-buttons {
-    display: flex;
-    flex-direction: column;
+.save-team-button {
+    width: 400px;
+    height: 2rem;
+    background-image: linear-gradient(
+        to right,
+        rgb(0, 255, 135),
+        rgb(2, 239, 255)
+    );
+    font-size: 19px;
+    border: 1px solid #37003c;
+    margin: 20px;
+    border-radius: $borderRadius;
+}
 
-    button {
-        height: 30px;
-        width: 400px;
-        margin: 5px;
-        font-size: 18px;
-        background-image: linear-gradient(
-            to right,
-            rgb(0, 255, 135),
-            rgb(2, 239, 255)
-        );
-        border: 1px solid grey;
-    }
+.save-team-button:hover {
+    cursor: pointer;
 }
